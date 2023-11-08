@@ -18,10 +18,11 @@ router.get('/', async (req, res) => {
     const blogs = data.map((blog) => blog.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('dash', { 
+    res.render('homepage', { 
       blogs, 
       logged_in: req.session.logged_in 
     });
+    
   } catch (err) {
     res.status(500).json(err);
   }
