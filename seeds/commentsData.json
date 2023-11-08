@@ -1,11 +1,13 @@
-[
+  [
     {
-      "name": "Test Blog 1",
-      "description": "Coding: The language of innovation and problem-solving. Unleash your creativity, build the future, and make your mark in the digital world! 💻🚀 #Coding"
+      "blog_id": "1",
+      "user_id": "1",
+      "body": "Cool! Thanks for the info."
     },
     {
-      "name": "Test Blog 2",
-      "description": "Dive into the world of coding, where creativity meets logic! 💻✨ Unlock endless possibilities, solve problems, and build the future, one line at a time. #CodingMagic #TechInnovation 🚀"
+      "blog_id": "2",
+      "user_id": "2",
+      "body": "Amazeballs"
     }
   ]
   
