@@ -7,14 +7,15 @@ const loginFormHandler = async (event) => {
   if (username && password) {
     const response = await fetch('/api/users/login', {
       method: 'POST',
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({ name, password }),
       headers: { 'Content-Type': 'application/json' },
     });
 
     if (response.ok) {
       document.location.replace('/dash');
     } else {
-      alert(response.statusText);
+      console.error(`Request failed with status: ${response.status} - ${response.statusText}`);
+      alert('Login failed. Please check your credentials and try again.');
     }
   }
 };
