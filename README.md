@@ -1,94 +1,65 @@
-# Unit 14 Mini-Project: Crowdfunding App
 
-In this mini-project, you will work with a group to build a full-stack crowdfunding app using Node.js, Express.js, Sequelize, Handlebars.js, and MVC architecture.
+<div align="center">
+  
+  ![](images/13-orm-homework-demo-01.gif)
 
-## User Stories
+  <h3 align="center">Tech Blog</h3>
 
-* As a user, I want to see a list of current projects seeking funding.
+  <p align="center">
+  We've developed a dynamic tech blog using a combination of technologies, including Handlebars, Express, and session management. This platform allows us to create and share insightful articles, providing a seamless and interactive user experience. With Handlebars for templating, Express for server-side logic, and session management for user authentication and personalization, our tech blog offers a robust and user-friendly environment for both readers and authors. Explore the latest tech trends and innovations with ease on our innovative tech blog.
+  </p>
 
-* As a user, I want to be able to create an account.
+</div>
 
-* As a registered user, I want to post my own projects to ask for funding.
 
-### Acceptance Criteria
+### Built With
 
-* It's done when the `/` homepage route renders a list of all projects from the database.
+![MySQL2](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![EXPRESS](https://img.shields.io/badge/EXPRESS-blue?style=for-the-badge)
+![HANDLEBARS](https://img.shields.io/badge/HANDLEBARS-pink?style=for-the-badge)
 
-* It's done when the `/project/:id` route renders an individual project's details based on the route parameter id.
 
-* It's done when the `/login` route renders a form to log in and a form to create a new account.
+<!-- GETTING STARTED -->
+## Getting Started
 
-* It's done when an existing user can enter their credentials on the login page to create a session on the server.
+Install the following to play with the program
 
-* It's done when a new user can create an account on the login page and then be immediately logged in with a session.
+### Prerequisites
+1. Clone the repo
+   ```sh
+   git clone https://github.com/your_username_/Project-Name.git
+   ```
+2. Install <i>dependencies</i>.
+  ```sh
+  npm install
+  ```
 
-* It's done when the `/profile` route renders the logged-in user's projects and a form to create a new project.
+3. Install <i>seeds</i>.
+  ```sh
+  npm run seed
+  ```
 
-* It's done when only a logged in user can visit the `/profile` route.
+<!-- LICENSE -->
+## License
 
-* It's done when a logged in user is redirected to `/profile` when they try to visit `/login` again.
+Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-* It's done when a user on the profile page can use the form to create a new project in the database.
+<!-- CONTACT -->
+## Contact
 
-* It's done when a user on the profile page can select a "Delete" button to remove their project from the database.
+Nhi Hoang - [linkedin](https://www.linkedin.com/in/ynhihoang/)
+Project Repo: [https://github.com/eviehoang/tech-blog](https://github.com/eviehoang/tech-blog)
+Heroku: [Heroku](https://drive.google.com/file/d/1BPCKPcyW4kZPRhm6XN-Nm-7PJ3nN-Lub/view?usp=sharing)
 
-* It's done when a logged-in user can select a "Logout" button to remove their session.
 
-* It's done when the API routes to create and delete posts are protected from non logged-in users.
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
 
-* It's done when the code is organized using MVC architecture.
-
-* It's done when the views are rendered with Handlebars.js templates.
-
-## Specifications 
-
-* The database models have the following fields and associations:
-
-  * `User`
-
-    * `id`: primary key
-
-    * `name`
-
-    * `email`
-
-    * `password`
-
-  * `Project`
-
-    * `id`: primary key
-
-    * `name`
-
-    * `description`
-
-    * `date_created`
-
-    * `needed_funding`
-
-    * `user_id`: foreign key that references `User.id`
-
-  * Users have many projects, and projects belong to a user.
-
-    * If a user is deleted, all associated projects are also deleted.
-
----
-
-## 💡 Hints
-
-* What tools can you use to test the existing API routes if you don't yet have a front end?
-
-* Where would you place the client-side JavaScript for capturing form data?
-
-* How can middleware help protect routes from non logged-in users?
-
-* How can Handlebars.js helpers (both built-in and custom) be used to render the desired results?
-
-## 🏆 Bonus
-
-If you have completed this activity, work through the following challenge with your partner to further your knowledge:
-
-* Add an `/edit/:id` route for logged in users to update their projects' details. Then deploy the app to Heroku!
-
----
-© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
+* [Ileriaya Markdown-badges](https://github.com/Ileriayo/markdown-badges)
+* [GitHub Pages](https://pages.github.com)
+* [W3School](https://w3schools.com/graphics/svg_rect.asp) for tutorial codes and educational references.
+* [MDN](https://developer.mozilla.org/en-US/) for example codes and educational references.
+* [Source Code provided by BCS Team](https://github.com/coding-boot-camp/fantastic-umbrella)
