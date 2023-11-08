@@ -1,6 +1,6 @@
 module.exports = {
   format_date: (date) => {
-    // Format date as MM/DD/YYYY
-    return date.toLocaleDateString();
+    const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+    return new Intl.DateTimeFormat('en-US', options).format(date);
   }
 };

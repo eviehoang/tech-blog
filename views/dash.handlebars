@@ -1,43 +1,48 @@
-<div class="row">
-  <div class="col-auto">
-    <h2><span>~</span>Welcome, {{username}}!<span>~</span></h2>
-  </div>
-</div>
-
-<div class="row mt-4">
-  <div class="col-md-6">
-    <h3>Create a New Blog:</h3>
-
-    <form class="form new-blog-form">
-      <div class="form-group">
-        <input class="form-input" type="text" id="blog-title" name="blog-title" placeholder="Blog Title" />
-      </div>
-      
-      <div class="form-group">
-        <textarea class="form-input" id="blog-desc" name="blog-desc" placeholder="Blog Content"></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
-      </div>
-    </form>
+<div class="col-9 flex-column">
+  <div class="col-auto pb-5">
+    <h2 style="text-align: center;">Hi there, {{name}}!</h2>
   </div>
 
-  {{#if blogs.length}}
-  <div class="col-md-6 blog-list">
-    <h3>Current Blogs:</h3>
+  <div align="center">
+    <div class="col-9" align="left">
+      <h3>Create a New Blog:</h3>
 
-    {{#each blogs as |blog|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/blog/{{blog.id}}">{{blog.title}}</a></h4>
+      <form class="form new-blog-form pb-1">
+        <div class="form-group pb-2">
+          <input class="form-input" type="text" id="blog-title" name="blog-title" placeholder="Blog Title" />
+        </div>
+
+        <div class="form-group pb-1">
+          <textarea class="form-input col-12" id="blog-desc" name="blog-desc" placeholder="Blog Content"
+            rows="5"></textarea>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Create</button>
+        </div>
+      </form>
+
+
+      {{#if blogs.length}}
+      <div class="col-md-6 blog-list pt-4">
+        <h3>Current Blogs:</h3>
+
+        {{#each blogs as |blog|}}
+        <div class="row mb-2">
+          <div class="col-auto">
+            <h5><a href="/blog/{{blog.id}}">{{blog.title}}</a></h5>
+          </div>
+          <div class="col-auto">
+            <button class="btn btn-danger btn-sm" data-id="{{blog.id}}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
+  <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
+</svg></button>
+          </div>
+        </div>
+        {{/each}}
       </div>
-      <div class="col-md-4">
-        <button class="btn btn-danger" data-id="{{blog.id}}">DELETE</button>
-      </div>
+      {{/if}}
     </div>
-    {{/each}}
   </div>
-  {{/if}}
 </div>
-
-<script src="/js/dashboard.js"></script>
+<script src="/js/dash.js"></script>
