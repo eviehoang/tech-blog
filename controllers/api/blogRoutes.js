@@ -19,23 +19,23 @@ router.post('/', withAuth, async (req, res) => {
 
 // Delete Blog
 router.delete('/:id', withAuth, async (req, res) => {
-    try {
-      const blogData = await Blog.destroy({
-        where: {
-          id: req.params.id,
-          user_id: req.session.user_id,
-        },
-      });
-  
-      if (!blogData) {
-        res.status(404).json({ message: '404 Blog ID not found' });
-        return;
-      }
-  
-      res.status(200).json(blogData);
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
+  try {
+    const blogData = await Blog.destroy({
+      where: {
+        id: req.params.id,
+        user_id: req.session.user_id,
+      },
+    });
 
-  odule.exports = router;
+    if (!blogData) {
+      res.status(404).json({ message: '404 Blog ID not found' });
+      return;
+    }
+
+    res.status(200).json(blogData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+module.exports = router;
