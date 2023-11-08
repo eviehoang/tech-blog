@@ -1,0 +1,12 @@
+[
+  {
+    "blog_id": "1",
+    "user_id": "1",
+    "body": "Cool! Thanks for the info."
+  },
+  {
+    "blog_id": "2",
+    "user_id": "2",
+    "body": "Amazeballs"
+  }
+]

@@ -9,7 +9,7 @@ Comments.init({
         primaryKey: true,
         autoIncrement: true,
     },
-    comment_body: {
+    body: {
         type: DataTypes.STRING,
     },
     date: {
