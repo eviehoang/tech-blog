@@ -10,35 +10,67 @@
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <a href="/">My TECH Blog</a>
-      </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
+ <body>
+    <div class="flex-column justify-space-around">
+
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid navBack">
+          <a class="navbar-brand navTitle" href="/">The Tech Blog</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+              {{#if logged_in}}
+
+                <li class="nav-item">
+                  <a class="nav-link" href="/dash">Dashboard</a>
+                </li>
+
+                {{! need to add css }}
+                <li class="nav-item">
+                  <button class="no-button" id="logout">Logout</button>
+                </li>
+
+              {{else}}
+                <li>
+                  <a class="nav-link" href="/login">Login</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="/signUp">Sign Up</a>
+                </li>
+              {{/if}}
+
+            </ul>
+          </div>
+        </div>
       </nav>
-    </header>
-    <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->
-      {{{ body }}}
-    </main>
-    <footer>
 
-    </footer>
+      <main class="container d-flex flex-row justify-content-start">
+        {{{body}}}
+      </main>
+
+<footer class="text-center text-white fixed-bottom" style="background-color: #21081a;">
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2023 Copyright:
+    <a class="text-white" href="">Made by Evie Hoang</a>
   </div>
-
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
+  <!-- Copyright -->
+</footer>
+    </div>
 
   {{!-- Bootstrap Script --}}
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
